@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+    <title>PORTFOLIO</title>
+</head>
+<style>
+    @font-face {
+        font-family: Mcdo;
+        src: url(fonts/mclawsuit/mclawsui.ttf);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    header {
+        background-color: #DA291C;
+        color: #FFC72C;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between; /* Align items horizontally */
+        align-items: center; /* Align items vertically */
+        position: fixed;
+        width: 100%;
+    }
+
+    nav {
+        background-color: #DA291C;
+        padding: 8px;
+        text-align: center;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 5px; /* Adjust the padding as needed */
+        margin: 0 2px; /* Adjust the margin as needed */
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+
+    nav ul ul {
+        display: none;
+        position: absolute;
+        background-color: #DA291C;
+        padding: 8px;
+    }
+
+    nav li:hover > ul {
+        display: inherit;
+    }
+
+    nav ul ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: Mcdo;
+        letter-spacing: 7px;
+    }
+
+    .bg-img {
+        background: url(images/1.jpg);
+        width: 25%; /* Adjust the width as needed */
+        height: 100vh;
+        background-size: cover;
+        background-position: top left;
+        background-repeat: no-repeat;
+        float: left; /* Make it float to the left */
+    }
+
+    .bg-img2 {
+        background: url(images/2.jpg);
+        width: 25%; /* Adjust the width as needed */
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        float: left; /* Make it float to the left */
+    }
+
+    .bg-img3 {
+        background: url(images/3.jpg);
+        width: 25%; /* Adjust the width as needed */
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        float: left; /* Make it float to the left */
+    }
+
+    .bg-img4 {
+        background: url(images/4.jpg);
+        width: 25%; /* Adjust the width as needed */
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        float: left; /* Make it float to the left */
+    }
+
+    .red-box {
+        background-color: #DA291C;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+        margin-bottom: 0px;
+        box-sizing: border-box;
+    }
+
+    .red-box p {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 50px;
+        color: #FFC72C;
+        overflow: hidden; /* Hide overflow to create typing effect */
+        white-space: nowrap; /* Prevent text from wrapping */
+        margin: 0;
+        letter-spacing: 5px;
+        position: relative;
+        animation: typing 5s steps(50) infinite; /* Typing effect */
+    }
+
+    .red-box p::after {
+        content: '|'; /* Blinking caret */
+        position: absolute;
+        display: inline-block;
+        width: 8px; /* Adjust caret width */
+        height: 1.2em; /* Adjust caret height */
+        margin-left: 5px; /* Adjust caret position */
+        color: white; /* Change caret color to white */
+        animation: caretBlink 1s infinite; /* Blinking animation */
+    }
+
+    @keyframes typing {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    @keyframes caretBlink {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+
+    nav li {
+        display: inline-block;
+        position: relative; /* Add relative positioning */
+    }
+
+    nav ul ul {
+        display: none;
+        position: absolute;
+        top: 145%;
+        left: -35%;
+        padding: 5px;
+        box-shadow: 0 2px 5px #DA291C; /* Add a soft box shadow */
+        border-radius: 8px; /* Adjust the border radius as needed */
+        opacity: 0.7;
+    }
+
+    nav ul ul:hover {
+        background-color: rgb(255, 255, 255); /* Change opacity on hover */
+        opacity: 1;
+    }
+
+    nav li:hover > ul {
+        display: inherit;
+    }
+
+    nav ul ul li {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        background-color: #DA291C; /* Set the initial transparency */
+        transition: background-color 1s; /* Add a transition effect */
+        border-bottom: 1px solid white; /* Add a thin black border line */
+    }
+
+    nav ul ul li:hover {
+        background-color: rgba(218, 41, 28, 1); /* Change opacity on hover */
+    }
+
+    nav ul ul li a {
+        display: block;
+        padding: 10px; /* Adjust the padding as needed */
+        margin: 0; /* Reset margin */
+        color: white;
+        text-decoration: none;
+        opacity: 0.5; /* Set the initial transparency for all links */
+        transition: opacity 0.5s; /* Add a transition effect */
+    }
+
+    nav ul ul li:hover a {
+        opacity: 1; /* Change opacity on hover for the specific link */
+    }
+
+    .bottom-right-img {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 0.5in; /* 1x1 inches size */
+        height: auto; /* Maintain aspect ratio */
+        z-index: 1; /* Place the image above other elements */
+        padding-bottom: 5px;
+        padding-right: 5px;
+    }
+
+    .skill-progress, .empty-bar {
+    background-color: var(--overall-color);
+    height: 20px; /* Adjust the height as needed */
+    margin-bottom: 10px; /* Add some space between the skills bars */
+}
+
+/* Individual skill bars */
+.html-bar, .css-bar, .java-bar, .js-bar, .python-bar, .php-bar {
+    background-color: red; /* Change color to red */
+    width: 0; /* Set initial width to 0 */
+    transition: width 1s ease; /* Add a smooth transition effect */
+}
+
+</style>
+<body>
+    <header>
+        <div class="head">
+            <h1>W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WELCOME TO MY PORTFOLIO</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a>|</li>
+                <li>
+                    <a href="#">Projects</a>|
+                    <ul>
+                        <li><a href="website-development.html">Website Development</a></li>
+                        <li><a href="certificates.html">Certficates</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a>|</li>
+                <li><a href="error404.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bg-img"></div>
+    <div class="bg-img2"></div>
+    <div class="bg-img3"></div>
+    <div class="bg-img4"></div>
+
+    <div class="red-box">
+        <p id="dynamicText">WEB DEVELOPER</p>
+    </div>
+
+    <img class="bottom-right-img" src="images/logo.png" alt="Bottom Right Image">
+    
+    <script>
+        // JavaScript to dynamically change the text content
+        const textElement = document.getElementById('dynamicText');
+const words = ['WEB DEVELOPER', 'GAMER', 'MUSICIAN', 'FASHION ENTHUSIAST', 'HOBBYIST'];
+let currentWordIndex = 0;
+
+function changeText() {
+    textElement.textContent = words[currentWordIndex];
+    currentWordIndex = (currentWordIndex + 1) % words.length;
+}
+
+setInterval(changeText, 5000); // Change text every 2 seconds
+changeText();
+
+document.addEventListener('DOMContentLoaded', function () {
+    window.addEventListener('scroll', animateSkillsBars);
+
+    function animateSkillsBars() {
+        var skillsBars = document.querySelectorAll('.skills-bar-progress');
+
+        skillsBars.forEach(function (bar) {
+            if (isElementInViewport(bar) && !bar.classList.contains('animated')) {
+                bar.classList.add('animated');
+                bar.querySelector('span').style.width = bar.querySelector('span').getAttribute('style');
+            }
+        });
+    }
+
+    // Check if an element is in the viewport
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    animateSkillsBars(); // Initial check on page load
+});
+    </script>
+</body>
+</html>

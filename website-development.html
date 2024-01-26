@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+    <title>Website Projects</title>
+    <style>
+        @font-face {
+            font-family: Mcdo;
+            src: url(fonts/mclawsuit/mclawsui.ttf);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        
+        header {
+            background-color: #DA291C;
+            color: #FFC72C;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Align items horizontally */
+            align-items: center; /* Align items vertically */
+            position: fixed;
+            width: 100%;
+        }
+        
+        nav {
+            background-color: #DA291C;
+            padding: 8px;
+            text-align: center;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 5px; /* Adjust the padding as needed */
+            margin: 0 2px; /* Adjust the margin as needed */
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+        
+        nav li {
+            display: inline-block;
+        }
+        
+        nav ul ul {
+            display: none;
+            position: absolute;
+            background-color: #DA291C;
+            padding: 8px;
+        }
+        
+        nav li:hover > ul {
+            display: inherit;
+        }
+        
+        nav ul ul li {
+            width: 100%;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: Mcdo;
+            letter-spacing: 7px;
+        }
+        
+        nav li {
+            display: inline-block;
+            position: relative; /* Add relative positioning */
+        }
+        
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 145%;
+            left: -35%;
+            padding: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a soft box shadow */
+            border-radius: 8px; /* Adjust the border radius as needed */
+            opacity: 0.7;
+        }
+        
+        nav ul ul:hover {
+            background-color: rgb(255, 255, 255); /* Change opacity on hover */
+            opacity: 1;
+        }
+        
+        nav li:hover > ul {
+            display: inherit;
+        }
+        
+        nav ul ul li {
+            width: 100%;
+            text-align: center;
+            padding: 8px 0;
+            background-color: rgba(218, 41, 28, 0.1); /* Set the initial transparency */
+            transition: background-color 1s; /* Add a transition effect */
+            border-bottom: 1px solid white; /* Add a thin black border line */
+        }
+        
+        nav ul ul li:hover {
+            background-color: rgba(218, 41, 28, 1); /* Change opacity on hover */
+        }
+        
+        nav ul ul li a {
+            display: block;
+            padding: 10px; /* Adjust the padding as needed */
+            margin: 0; /* Reset margin */
+            color: white;
+            text-decoration: none;
+            opacity: 0.5; /* Set the initial transparency for all links */
+            transition: opacity 0.5s; /* Add a transition effect */
+        }
+        
+        nav ul ul li:hover a {
+            opacity: 1; /* Change opacity on hover for the specific link */
+        }
+        
+        .image-grid {
+    margin-left: 10px; /* Adjust the margin-left value as needed */
+    margin-top: 50px; /* Adjust the margin-top value as needed */
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+        
+        .titles h2 {
+            color: white;
+            text-align: center;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        
+        .bottom-right-img {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 0.5in; /* 1x1 inches size */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 1; /* Place the image above other elements */
+            padding-bottom: 5px;
+            padding-right: 5px;
+        }
+        .project-item {
+    margin-bottom: 20px; /* Adjust the margin-bottom value as needed */
+    text-align: center;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 5px 0;
+}
+
+.project-item p {
+    color: white;
+    background-color: #DA291C; 
+    padding: 10px; 
+    border-radius: 8px; 
+    margin-top: 10px; 
+}
+
+.project-item p a{
+    color: #FFC72C;
+    font-family: Mcdo;
+    text-align: center;
+}
+
+.red-box {
+        background-color: #DA291C;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+        margin-bottom: 0px;
+        box-sizing: border-box;
+    }
+
+    .red-box p {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 50px;
+        color: #FFC72C;
+        overflow: hidden; /* Hide overflow to create typing effect */
+        white-space: nowrap; /* Prevent text from wrapping */
+        margin: 0;
+        letter-spacing: 5px;
+        position: relative;
+        animation: typing 5s steps(50) infinite; /* Typing effect */
+    }
+
+    .red-box p::after {
+        content: '|'; /* Blinking caret */
+        position: absolute;
+        display: inline-block;
+        width: 8px; /* Adjust caret width */
+        height: 1.2em; /* Adjust caret height */
+        margin-left: 5px; /* Adjust caret position */
+        color: white; /* Change caret color to white */
+        animation: caretBlink 1s infinite; /* Blinking animation */
+    }
+
+    @keyframes typing {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    @keyframes caretBlink {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <h1>W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WELCOME TO MY PORTFOLIO</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a>|</li>
+                <li>
+                    <a href="#">Projects</a>|
+                    <ul>
+                        <li><a href="website-development.html">Website Development</a></li>
+                        <li><a href="certificates.html">Certificates</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a>|</li>
+                <li><a href="error404.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <img class="bottom-right-img" src="images/logo.png" alt="Bottom Right Image">
+    <div class="titles"><h2>PROJECTS</h2></div>
+    <div class="image-grid">
+        <div class="project-item">
+            <a href="https://themiddays.wordpress.com/" target="_blank"><img src="images/proj1.png" alt="Image 1"></a>
+            <p><a href="https://themiddays.wordpress.com/" target="_blank">The Middays</a>&nbsp;&nbsp;&nbsp;(A webpage on WordPress featuring the band "The Middays")</p>
+        </div>
+        <div class="project-item">
+            <a href="https://rawwphotog.com/" target="_blank"><img src="images/proj2.png" alt="Image 2"></a>
+            <p><a href="https://rawwphotog.com/" target="_blank">RAWWPHOTOG</a>&nbsp;&nbsp;&nbsp;(A webpage featuring an assortment of raw photographs)</p>
+        </div>
+        <div class="project-item">
+            <a href="error404.html" target="_blank"><img src="images/proj3.png" alt="Image 3"></a>
+            <p><a href="error404.html" target="_blank">MUSES</a>&nbsp;&nbsp;&nbsp;(A local website that highlights the developer's favorite band and artists)</p>
+        </div>
+        <div class="project-item">
+            <a href="error404.html" target="_blank"><img src="images/proj4.png" alt="Image 4"></a>
+            <p><a href="error404.html" target="_blank">PORTFOLIO</a>&nbsp;&nbsp;&nbsp;(An integrated local website showcasing the developer's work & info)</p>
+        </div>
+        
+    </div>
+
+    <div class="red-box">
+        <p id="dynamicText">WEB DEVELOPER</p>
+    </div>
+
+    <script>
+        // JavaScript to dynamically change the text content
+        const textElement = document.getElementById('dynamicText');
+const words = ['WEBSITES'];
+let currentWordIndex = 0;
+
+function changeText() {
+    textElement.textContent = words[currentWordIndex];
+    currentWordIndex = (currentWordIndex + 1) % words.length;
+}
+
+setInterval(changeText, 5000); // Change text every 2 seconds
+changeText();
+    </script>
+</body>
+</html>
