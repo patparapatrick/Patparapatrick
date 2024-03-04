@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@600&display=swap" rel="stylesheet">
+    <title>PORTFOLIO</title>
+</head>
+<style>
+    
+    
+    @font-face {
+        font-family: Mcdo;
+        src: url(fonts/mclawsuit/mclawsui.ttf);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    header {
+    background-color: white;
+    color: #FFC72C;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+    position: fixed; /* Change position to fixed */
+    top: 0; /* Stick the navbar to the top */
+    width: 100%;
+    z-index: 999; /* Ensure it's above other content */
+}
+
+    nav {
+        background-color: white;
+        color: #212529;
+        padding: 8px;
+        text-align: center;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    nav a {
+        color: #212529;
+        text-decoration: none;
+        padding: 10px 5px; /* Adjust the padding as needed */
+        margin: 0 2px; /* Adjust the margin as needed */
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+
+    nav ul ul {
+        display: none;
+        position: absolute;
+        background-color: #212529;
+        padding: 8px;
+    }
+
+    nav li:hover > ul {
+        display: inherit;
+    }
+
+    nav ul ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: Mcdo;
+        letter-spacing: 7px;
+    }
+
+    .bg-img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        max-width: 50%; /* Adjust the maximum width as needed */
+    max-height: 50%;
+        margin-left: 25%;
+    }
+
+    .centered-image {
+        max-width: 100%;
+        max-height: 100%;
+        clip-path: inset(0 20% 0 20%);
+    }
+
+    .red-box {
+        background-color: white;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+        margin-bottom: 0px;
+        box-sizing: border-box;
+        margin-top: 20%;
+    }
+
+    .red-box p {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 50px;
+        color: #212529;
+        overflow: hidden; /* Hide overflow to create typing effect */
+        white-space: nowrap; /* Prevent text from wrapping */
+        margin: 0;
+        letter-spacing: 5px;
+        position: relative;
+        animation: typing 5s steps(50) infinite; /* Typing effect */
+    }
+
+    .red-box p::after {
+        content: '|'; /* Blinking caret */
+        position: absolute;
+        display: inline-block;
+        width: 8px; /* Adjust caret width */
+        height: 1.2em; /* Adjust caret height */
+        margin-left: 5px; /* Adjust caret position */
+        color: #212529; /* Change caret color to white */
+        animation: caretBlink 1s infinite; /* Blinking animation */
+    }
+
+    @keyframes typing {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    @keyframes caretBlink {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+
+    nav li {
+        display: inline-block;
+        position: relative; /* Add relative positioning */
+    }
+
+    nav ul ul {
+        display: none;
+        position: absolute;
+        top: 145%;
+        left: -35%;
+        padding: 5px;
+        box-shadow: 0 2px 5px white; /* Add a soft box shadow */
+        border-radius: 8px; /* Adjust the border radius as needed */
+        opacity: 0.7;
+    }
+
+    nav ul ul:hover {
+        background-color: rgb(255, 255, 255); /* Change opacity on hover */
+        opacity: 1;
+    }
+
+    nav li:hover > ul {
+        display: inherit;
+    }
+
+    nav ul ul li {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+        background-color: #212529; /* Set the initial transparency */
+        transition: background-color 1s; /* Add a transition effect */
+        border-bottom: 1px solid white; /* Add a thin black border line */
+    }
+
+    nav ul ul li:hover {
+        background-color: white /* Change opacity on hover */
+    }
+
+    nav ul ul li a {
+        display: block;
+        padding: 10px; /* Adjust the padding as needed */
+        margin: 0; /* Reset margin */
+        color: white;
+        text-decoration: none;
+        opacity: 0.5; /* Set the initial transparency for all links */
+        transition: opacity 0.5s; /* Add a transition effect */
+    }
+
+    nav ul ul li:hover a {
+        opacity: 1; /* Change opacity on hover for the specific link */
+        color: #212529;
+    }
+
+    .bottom-right-img {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 0.5in; /* 1x1 inches size */
+        height: auto; /* Maintain aspect ratio */
+        z-index: 1; /* Place the image above other elements */
+        padding-bottom: 5px;
+        padding-right: 5px;
+    }
+
+    .skill-progress, .empty-bar {
+    background-color: var(--overall-color);
+    height: 20px; /* Adjust the height as needed */
+    margin-bottom: 10px; /* Add some space between the skills bars */
+}
+
+/* Individual skill bars */
+.html-bar, .css-bar, .java-bar, .js-bar, .python-bar, .php-bar {
+    background-color: white; /* Change color to red */
+    width: 0; /* Set initial width to 0 */
+    transition: width 1s ease; /* Add a smooth transition effect */
+}
+
+.logo img {
+    width: 50px; /* Adjust the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 20px; /* Adjust the margin as needed */
+    margin-top: 5px; /* Adjust the margin as needed */
+}
+
+.head {
+    display: flex;
+    align-items: center;
+}
+
+.head h1 {
+    font-family: Mcdo;
+    letter-spacing: 7px;
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.flag {
+    position: absolute;
+    bottom: 11%;
+    left: 59.5%;
+    width: 30px; /* Adjust the size as needed */
+    height: auto;
+    z-index: 2; /* Ensure flag appears above the image */
+}
+
+.loc{
+    position: absolute;
+    bottom: 10%;
+    left: 38%;
+    width: auto; /* Adjust the size as needed */
+    height: auto;
+    z-index: 2; /* Ensure flag appears above the image */
+    color: #212529;
+}
+
+.wave {
+        position: absolute;
+        bottom: -10%; /* Adjust the distance from the bottom as needed */
+        left: 59.4%; /* Adjust the distance from the left as needed */
+        transform: translateX(-50%); /* Center horizontally */
+    }
+
+    .wave-hand {
+        width: 5%; /* Adjust the width of the wave hand */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+.wave-paragraph {
+    position: absolute;
+    bottom: 30%; /* Adjust the distance from the top as needed */
+    left: 5%; /* Adjust the distance from the left as needed */
+    width: 90%; /* Adjust the width as needed */
+    max-width: 100%; /* Set maximum width if necessary */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Align items with space between them */
+}
+
+.wave-paragraph p {
+    color: #212529; /* Adjust text color as needed */
+    font-size: 100%; /* Adjust font size as needed */
+}
+
+.initials {
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        font-size: 1500%; /* Adjust the font size as needed */
+        color: #212529; /* Adjust the color as needed */
+        z-index: 1; /* Ensure the initials appear above the image */
+    }
+
+    .initials-left {
+        left: 13%; /* Adjust the distance from the left side */
+    }
+
+    .initials-right {
+        right: 3%; /* Adjust the distance from the right side */
+    }
+
+    .social-logo-fb {
+    width: 5.5%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    top: 90%;
+    margin-bottom: -0.8%;
+}
+
+.social-logo-ig {
+    width: 6%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    position: relative; /* Use relative positioning */
+    top: -20%; /* Adjust the position relative to its original position */
+    margin-left: 10%;
+    margin-bottom: -0.3%;
+
+}
+
+.social-logo-git {
+    width: 4%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-bottom: 0%;
+    bottom: 40%;
+}
+
+.soc-med {
+        position: absolute;
+        bottom: -15%; /* Adjust the distance from the bottom as needed */
+        left: 60%; /* Adjust the distance from the left as needed */
+        transform: translateX(-50%); /* Center horizontally */
+    }
+
+    .soc-med a {
+        margin: 0 10px; /* Adjust the margin between logos as needed */
+    }
+
+    .download {
+    position: absolute;
+    bottom: -25%;
+    right: 43.5%;
+}
+
+.download a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #212529;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Include transform in transition */
+}
+
+.download a:hover {
+    background-color: #212529;
+    transform: scale(1.1); /* Apply zoom effect on hover */
+}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a>|</li>
+                <li>
+                    <a href="#">Projects</a>|
+                    <ul>
+                        <li><a href="website-development.html">Website Development</a></li>
+                        <li><a href="certificates.html">Certificates</a></li>
+                        <li><a href="logo.html">Logos</a></li> <!-- New item for Logo -->
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a>|</li>
+                <li><a href="error404.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <div class="initials initials-left">I</div>
+        <div class="initials initials-right">AM</div>
+
+        <div class="loc">
+            <h2>PATRICK C. VILLANUEVA</h2>
+        </div>
+
+    <div class="wave">
+        <img class="wave-hand" src="images/wave.png" alt="Wave Hand">
+        <div class="wave-paragraph">
+            <p>! These are my social media links:</p>
+        </div>
+    </div>
+
+        <div class="soc-med">
+            <a href="https://facebook.com/69patricio"><img class="social-logo-fb" src="images/fb.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/patparapatrick/"><img class="social-logo-ig" src="images/ig.png" alt="Instagram"></a>
+            <a href="https://github.com/patparapatrick"><img class="social-logo-git" src="images/github.png" alt="GitHub"></a>
+        </div>
+
+
+    <div class="download">
+        <a href="./Resume_PatrickVillanueva.pdf" download="Resume_PatrickVillanueva.pdf">Download Resume</a>
+    </div>
+
+    <div class="bg-img-container">
+        <img class="centered-image" src="images/main.jpeg" alt="Centered Image">
+        <img class="flag" src="images/flag.png" alt="Philippines Flag">
+    </div>
+
+    <div class="red-box">
+        <p id="dynamicText">WEB DEVELOPER</p>
+    </div>
+
+    <img class="bottom-right-img" src="images/logo.png" alt="Bottom Right Image">
+    
+    <script>
+        // JavaScript to dynamically change the text content
+        const textElement = document.getElementById('dynamicText');
+        const words = ['WEB DEVELOPER', 'LOGO MAKER', 'UI/UX DESIGNER'];
+        let currentWordIndex = 0;
+
+        function changeText() {
+            textElement.textContent = words[currentWordIndex];
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+        }
+
+        setInterval(changeText, 5000); // Change text every 2 seconds
+        changeText();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            window.addEventListener('scroll', animateSkillsBars);
+
+            function animateSkillsBars() {
+                var skillsBars = document.querySelectorAll('.skills-bar-progress');
+
+                skillsBars.forEach(function (bar) {
+                    if (isElementInViewport(bar) && !bar.classList.contains('animated')) {
+                        bar.classList.add('animated');
+                        bar.querySelector('span').style.width = bar.querySelector('span').getAttribute('style');
+                    }
+                });
+            }
+
+            // Check if an element is in the viewport
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            animateSkillsBars(); // Initial check on page load
+        });
+    </script>
+</body>
+</html>
